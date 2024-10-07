@@ -26,6 +26,10 @@ bool md5(const std::string &filepath, std::string &res) {
   return true;
 }
 
+bool sha1(const std::string &input, std::string &res) { return false; }
+
+bool sha256(const std::string &input, std::string &res) { return false; }
+
 static const char kHex[] = "0123456789abcdef";
 std::string byteArrayToHexString(const unsigned char *str) {
   std::string res;
@@ -46,6 +50,10 @@ void Crypto::setEncType(EncType enctype) {
     this->_enc_func = md5;
     break;
   case EncType::SHA1:
+    this->_enc_func = sha1;
+    break;
+  case EncType::SHA256:
+    this->_enc_func = sha256;
     break;
   default:
     break;

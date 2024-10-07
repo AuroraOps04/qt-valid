@@ -3,12 +3,15 @@
 #include "iostream"
 
 bool md5(const std::string &input, std::string &res);
+bool sha1(const std::string &input, std::string &res);
+bool sha256(const std::string &input, std::string &res);
 
 std::string byteArrayToHexString(const unsigned char *str);
 
 enum class EncType {
   MD5,
   SHA1,
+  SHA256,
 };
 
 class Crypto {
